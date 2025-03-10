@@ -69,7 +69,7 @@ const Navbar = () => {
           className="text-xl font-bold text-primary transition-transform hover:scale-105"
           onClick={closeMenu}
         >
-          Portfolio
+          OUSS
         </Link>
 
         {/* Desktop Navigation */}

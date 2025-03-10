@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -49,16 +50,35 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+    // EmailJS configuration
+    // Note: You'll need to sign up at emailjs.com and set up a service, template and provide your User ID
+    const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+    const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+    const userID = 'YOUR_USER_ID'; // Replace with your EmailJS user ID
+    
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      to_name: "Oussama Zouini",
+      message: formData.message,
+      to_email: "oussamazouini780@gmail.com"
+    };
+    
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then(() => {
+        setIsSubmitting(false);
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setIsSubmitting(false);
+        toast.error("Failed to send message. Please try again later.");
       });
-    }, 1500);
   };
 
   return (
@@ -85,11 +105,11 @@ const Contact = () => {
 
               <div className="flex flex-col space-y-4">
                 <a
-                  href="mailto:email@example.com"
+                  href="mailto:oussamazouini780@gmail.com"
                   className="flex items-center text-foreground/80 hover:text-primary transition-colors"
                 >
                   <Mail className="h-5 w-5 mr-3" />
-                  <span>email@example.com</span>
+                  <span>oussamazouini780@gmail.com</span>
                 </a>
                 <a
                   href="https://github.com"
