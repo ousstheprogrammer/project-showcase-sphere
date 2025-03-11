@@ -122,19 +122,6 @@ const ProjectDetail = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              {project.links.demo && (
-                <Button asChild className="gap-2">
-                  <a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Globe className="h-4 w-4" />
-                    View Demo
-                  </a>
-                </Button>
-              )}
-              
               {project.links.github && (
                 <Button asChild variant="outline" className="gap-2">
                   <a
