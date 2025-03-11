@@ -119,13 +119,13 @@ const Contact = () => {
                   <span>github.com/ousstheprogrammer</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/oussama-zouini"
+                  href="https://www.linkedin.com/in/oussama-zouini-48a036280/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-foreground/80 hover:text-primary transition-colors"
                 >
                   <Linkedin className="h-5 w-5 mr-3" />
-                  <span>linkedin.com/in/oussama-zouini</span>
+                  <span>linkedin.com/in/oussama-zouini-48a036280</span>
                 </a>
               </div>
             </div>
