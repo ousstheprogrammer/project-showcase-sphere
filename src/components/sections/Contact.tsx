@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
@@ -51,13 +52,14 @@ const Contact = () => {
     
     // EmailJS configuration
     const serviceID = 'service_a3gagou'; // Your EmailJS service ID
-    const templateID = 'template_portfolio_contact'; // The template ID you created with {{name}}, {{email}}, {{message}} placeholders
-    const userID = 'YOUR_USER_ID'; // Replace with your EmailJS user ID
+    const templateID = 'template_portfolio_contact'; // Your template ID
+    const userID = 'W0zU8Pf6bCuAQ7jI3'; // Public key from EmailJS
     
     const templateParams = {
       name: formData.name,
       email: formData.email,
       message: formData.message,
+      to_email: "oussamazouini780@gmail.com" // Make sure this is in your EmailJS template
     };
     
     emailjs.send(serviceID, templateID, templateParams, userID)
