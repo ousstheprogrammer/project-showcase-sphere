@@ -110,22 +110,22 @@ const Contact = () => {
                   <span>oussamazouini780@gmail.com</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/ousstheprogrammer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-foreground/80 hover:text-primary transition-colors"
                 >
                   <Github className="h-5 w-5 mr-3" />
-                  <span>github.com/username</span>
+                  <span>github.com/ousstheprogrammer</span>
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/oussama-zouini"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-foreground/80 hover:text-primary transition-colors"
                 >
                   <Linkedin className="h-5 w-5 mr-3" />
-                  <span>linkedin.com/in/username</span>
+                  <span>linkedin.com/in/oussama-zouini</span>
                 </a>
               </div>
             </div>
